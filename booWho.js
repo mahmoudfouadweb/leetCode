@@ -1,6 +1,8 @@
 function booWho(bool) {
-  if (bool == "boolean") return true;
-  else return false;
+  let result = bool;
+  if (typeof bool == "boolean") result = true;
+  else result = false;
+  return result;
 }
 
 booWho(null);
