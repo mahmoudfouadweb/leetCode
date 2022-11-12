@@ -8,24 +8,29 @@ Likewise, getIndexToIns([20,3,5], 19) should return 2 because once the array has
 
 function getIndexToIns(arr, num) {
   // sort the first argument
-  
-  let location;
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = i + 1; j < arr.length; j++) {
-      if (arr[i] > arr[j]) {
-        let temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
+  const sortedArray = arr.slice();
+  let location = 0;
+  for (let i = 0; i < sortedArray.length; i++) {
+    for (let j = i + 1; j < sortedArray.length; j++) {
+      if (sortedArray[i] > sortedArray[j]) {
+        let temp = sortedArray[i];
+        sortedArray[i] = sortedArray[j];
+        sortedArray[j] = temp;
       }
     }
   }
   // get the location of the second argument
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === num) location = arr[i];
-    else location = num;
+  for (let i = 0; i < sortedArray.length; i++) {
+    if (num > sortedArray[i] && num < sortedArray[i + 1]) location = i + 1;
+    else if (num >= sortedArray[i] && num < sortedArray[i + 1]) location = i;
+    else if (num === sortedArray[0] || !sortedArray.length) return location;
+    else if (num > sortedArray[i] && num > sortedArray[sortedArray.length - 1])
+      location = sortedArray.length;
   }
-
+  console.log(sortedArray);
+  console.log(location);
   return location;
 }
 
 getIndexToIns([70, 40, 60, 1.5, 10, 5, 1], 50);
+getIndexToIns([10, 20, 30, 40, 50], 35);
