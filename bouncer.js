@@ -17,5 +17,13 @@ function bouncer(arr) {
   return arr;
 }
 
-bouncer([7, "ate", "", false, 9]);
-bouncer([false, null, 0, NaN, undefined, ""]);
+// A second solution
+function bouncer2(arr) {
+  console.log(arr.filter(Boolean));
+}
+
+// bouncer([7, "ate", "", false, 9]);
+// bouncer([false, null, 0, NaN, undefined, ""]);
+
+bouncer2([7, "ate", "", false, 9]);
+bouncer2([false, null, 0, NaN, undefined, ""]);
