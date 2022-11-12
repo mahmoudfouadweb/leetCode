@@ -10,11 +10,12 @@ Hint: Try converting each value to a Boolean.
 function bouncer(arr) {
   const newArray = [];
   for (let i = 0; i < arr.length; i++) {
-    console.log(arr[i]);
-    if (arr[i] != false) newArray.push(arr[i]);
+    // console.log(arr[i]);
+    if (arr[i]) newArray.push(arr[i]);
   }
   console.log(newArray);
   return arr;
 }
 
 bouncer([7, "ate", "", false, 9]);
+bouncer([false, null, 0, NaN, undefined, ""]);
