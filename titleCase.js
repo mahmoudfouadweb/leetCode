@@ -5,20 +5,20 @@ For the purpose of this exercise, you should also capitalize connecting words li
 */
 
 function titleCase(str) {
-  const sentences = str.split(" ");
-  let result = "";
-  for (let i = 0; i < sentences.length; i++) {
-    for (let j = 0; j < sentences[i].length; j++) {
-      result += `${sentences[i][0].toUpperCase()}${sentences[i][j]
-        .toLowerCase().split('')} `;
-    }
-    // sentences[i];
-    // console.log("sentences[i] >>", sentences[i]);
+  str = str.toLowerCase().split(" ");
+
+  for (let i = 0; i < str.length; i++) {
+    str[i] = str[i][0].toUpperCase() + str[i].slice(1);
   }
-
-  console.log(result);
-
-  return result;
+  console.log(str[2].slice(-2,-1));
+  return str.join(' ');
 }
 
 titleCase("I'm a little tea pot");
+// function titleCase(str) {
+//   str = str.toLowerCase().split(' ');
+//   for (var i = 0; i < str.length; i++) {
+//     str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1); 
+//   }
+//   return str.join(' ');
+// }
