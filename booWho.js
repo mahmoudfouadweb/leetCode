@@ -1,3 +1,4 @@
+// done
 function booWho(bool) {
   let result = bool;
   if (typeof bool == "boolean") result = true;
