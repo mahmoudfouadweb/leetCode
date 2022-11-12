@@ -7,7 +7,22 @@ Likewise, getIndexToIns([20,3,5], 19) should return 2 because once the array has
 */
 
 function getIndexToIns(arr, num) {
+  // sort the first argument
+  let current = arr[0];
+  for (let i = 0; i < arr.length; i++) {
+     let next = arr[i + 1];
+    if (next < current) {
+      current = next;
+      next = current;
+      current = arr[i];
+      next = arr[i + 1];
+      console.log(arr);
+    }
+  }
+
+  // get the location of the second argument
+
   return num;
 }
 
-getIndexToIns([40, 60], 50);
+getIndexToIns([70, 40, 60], 50);
