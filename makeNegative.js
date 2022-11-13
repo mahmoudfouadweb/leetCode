@@ -1,6 +1,5 @@
 function makeNegative(num) {
-  if (num > 0) return -num;
-  if (num < 0 || num === 0) return num;
+  return num ? -num : num;
 }
 
 makeNegative(1); // return -1
