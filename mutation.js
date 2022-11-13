@@ -20,7 +20,6 @@ function mutation(arr) {
   console.log(true);
   return true;
 }
-
 mutation(["hello", "hey"]);
 mutation(["Mary", "Army"]);
 mutation(["hello", "Hello"]);
