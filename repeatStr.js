@@ -1,3 +1,6 @@
-function repeatStr (n, s) {
-  return '';
+function repeatStr(n, s) {
+  let result = "";
+  for (let i = 0; i < n; i++) result += s;
+  console.log(result)
+  return result;
 }
